@@ -1,0 +1,16 @@
+{
+	"name": "mdui-in-react",
+	"version": "1.0.0",
+	"description": "help to use mdui in project build with React.js",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "rivertwilight<wrj2014@126.com>",
+	"license": "ISC",
+	"dependencies": {
+		"mdui": "^0.4.3",
+		"react": "^16.13.0",
+		"prop-types": "^15.7.2"
+	}
+}
