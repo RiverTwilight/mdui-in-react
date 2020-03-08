@@ -1,9 +1,9 @@
-import ListControlMenu from './src/ListControlMenu'
-import TextInput from './src/TextInput'
-import ColorInput from './src/ColorInput'
-import ListControlCheck from './src/ListControlCheck'
-import RangeInput from './src/RangeInput'
-import MusicPlayer from './src/MusicPlayer'
+import ListControlMenu from './dist/ListControlMenu'
+import TextInput from './dist/TextInput'
+import ColorInput from './dist/ColorInput'
+import ListControlCheck from './dist/ListControlCheck'
+import RangeInput from './dist/RangeInput'
+import MusicPlayer from './dist/MusicPlayer'
 
 export {
     ListControlMenu,
