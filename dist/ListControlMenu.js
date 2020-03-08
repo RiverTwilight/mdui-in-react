@@ -1,71 +1,126 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***
    *列表控制-菜单组件
    *2020-02-16 江村暮
    **/
 
-
-const Dialog = props => {
-	const items = props.items.map((item,i)=>{
-		return(
-		    <label key={i} mdui-dialog-close="true" className="mdui-list-item mdui-ripple">
-			    <div className="mdui-radio">
-			        <input
-						onChange={e=>props.onCheckedChange(i)} 
-				        type="radio" key={i}
-				        checked={props.items[props.checked].value === item.value}/>
-			        <i className="mdui-radio-icon"></i>
-			    </div>
-		        <div className="mdui-list-item-content">{item.name}</div>
-		    </label>
+var Dialog = function Dialog(props) {
+	var items = props.items.map(function (item, i) {
+		return _react2.default.createElement(
+			'label',
+			{ key: i, 'mdui-dialog-close': 'true', className: 'mdui-list-item mdui-ripple' },
+			_react2.default.createElement(
+				'div',
+				{ className: 'mdui-radio' },
+				_react2.default.createElement('input', {
+					onChange: function onChange(e) {
+						return props.onCheckedChange(i);
+					},
+					type: 'radio', key: i,
+					checked: props.items[props.checked].value === item.value }),
+				_react2.default.createElement('i', { className: 'mdui-radio-icon' })
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'mdui-list-item-content' },
+				item.name
+			)
+		);
+	});
+	return _react2.default.createElement(
+		'div',
+		{ className: 'mdui-dialog', id: 'list' },
+		_react2.default.createElement(
+			'div',
+			{ className: 'mdui-dialog-title' },
+			props.title
+		),
+		_react2.default.createElement(
+			'div',
+			{ className: 'mdui-dialog-content' },
+			_react2.default.createElement(
+				'ul',
+				{ className: 'mdui-list' },
+				items
+			)
+		),
+		_react2.default.createElement(
+			'div',
+			{ className: 'mdui-dialog-actions' },
+			_react2.default.createElement(
+				'button',
+				{ 'mdui-dialog-close': 'true', className: 'mdui-btn mdui-ripple' },
+				'\u53D6\u6D88'
+			)
 		)
-	})
-	return(
-		<div className="mdui-dialog" id="list">
-			<div className="mdui-dialog-title">{props.title}</div>
-            <div className="mdui-dialog-content">
-	            <ul className="mdui-list">{items}</ul>
-            </div>
-            <div className="mdui-dialog-actions">
-			    <button mdui-dialog-close="true" className="mdui-btn mdui-ripple">取消</button>
-            </div>
-        </div>
-	)
-}
+	);
+};
 
-const ListControlMenu = props => {
-	const { checked, items, text } = props;
-	return(
-        <React.Fragment>
-			<li mdui-dialog="{target:'#list',history:false}" className="mdui-list-item mdui-ripple">
-			    <i className="mdui-list-item-icon mdui-icon material-icons">{props.icon}</i>
-			    <div className="mdui-list-item-content">
-				    <div className="mdui-list-item-title mdui-list-item-one-line">{text}</div>
-	                <div className="mdui-list-item-text mdui-list-item-one-line">{items[checked].name}</div>
-	            </div>
-			</li>
-			<Dialog 
-				checked={checked}
-				title={text}
-				onCheckedChange={props.onCheckedChange}
-				items={items} />
-		</React.Fragment>
-	)
-}
+var ListControlMenu = function ListControlMenu(props) {
+	var checked = props.checked,
+	    items = props.items,
+	    text = props.text;
+
+	return _react2.default.createElement(
+		_react2.default.Fragment,
+		null,
+		_react2.default.createElement(
+			'li',
+			{ 'mdui-dialog': '{target:\'#list\',history:false}', className: 'mdui-list-item mdui-ripple' },
+			_react2.default.createElement(
+				'i',
+				{ className: 'mdui-list-item-icon mdui-icon material-icons' },
+				props.icon
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'mdui-list-item-content' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'mdui-list-item-title mdui-list-item-one-line' },
+					text
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'mdui-list-item-text mdui-list-item-one-line' },
+					items[checked].name
+				)
+			)
+		),
+		_react2.default.createElement(Dialog, {
+			checked: checked,
+			title: text,
+			onCheckedChange: props.onCheckedChange,
+			items: items })
+	);
+};
 
 ListControlMenu.defaultProps = {
-    icon: 'settings',
-    onCheckedChange:()=>{}
-}
+	icon: 'settings',
+	onCheckedChange: function onCheckedChange() {}
+};
 
 ListControlMenu.propTypes = {
-	text: PropTypes.string.isRequired, //文本
-	checked: PropTypes.number.isRequired, //选中的项目名索引
-	items: PropTypes.array.isRequired,//待选项目
-	onCheckedChange: PropTypes.func, //回调函数
-	icon: PropTypes.string //图标
-}
+	text: _propTypes2.default.string.isRequired, //文本
+	checked: _propTypes2.default.number.isRequired, //选中的项目名索引
+	items: _propTypes2.default.array.isRequired, //待选项目
+	onCheckedChange: _propTypes2.default.func, //回调函数
+	icon: _propTypes2.default.string //图标
+};
 
-export default ListControlMenu
+exports.default = ListControlMenu;

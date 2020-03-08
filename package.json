@@ -1,14 +1,21 @@
 {
-  "name": "react-mdui",
+  "name": "mdui-in-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "一个基于mdui(https://mdui.org)的React UI库，对mdui内置组件的封装（包括事件回调），还增加了一些扩展组件。",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --open --port 4000 --hot --host 127.0.0.1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+  	"react",
+  	"mdui",
+  	"ui",
+  	"material design"
+  ],
+  "author": {
+  	"name": "rivertwilight"
+  },
   "license": "ISC",
   "dependencies": {
     "mdui": "^0.4.3",
@@ -27,5 +34,6 @@
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
-  }
+  },
+  "files":["package.json","dist","index.js","README.md"]
 }
