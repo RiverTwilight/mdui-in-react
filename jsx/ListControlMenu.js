@@ -57,11 +57,12 @@ const ListControlMenu = props => {
 
 ListControlMenu.defaultProps = {
     icon: 'settings',
-    onCheckedChange:()=>{}
+    onCheckedChange:()=>{},
+    text: '请选择...'
 }
 
 ListControlMenu.propTypes = {
-	text: PropTypes.string.isRequired, //文本
+	text: PropTypes.string, //文本
 	checked: PropTypes.number.isRequired, //选中的项目名索引
 	items: PropTypes.array.isRequired,//待选项目
 	onCheckedChange: PropTypes.func, //回调函数

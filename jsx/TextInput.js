@@ -24,7 +24,7 @@ const TextInput = ({icon, rows, header, placeholder, maxlength, value, onTextCha
                 onChange={e=>{
                     onTextChange(e.target.value)
                 }} 
-                value={value||''}
+                value={value}
                 autoFocus={autofocus} type={type} className="mdui-textfield-input">
             </TagType>
         </div>
@@ -36,17 +36,19 @@ TextInput.defaultProps = {
     type: 'text',
     autofocus: false,
     maxlength: null,
-    placeholder:''
+    placeholder:'',
+    value:''
 }
 
 TextInput.propTypes={
     text:PropTypes.string,
-    value:PropTypes.bool,
+    value:PropTypes.string,
     onTextChange:PropTypes.func,
     icon:PropTypes.string,
     autofocus: PropTypes.bool,
     placeholder:PropTypes.string,
-    rows:PropTypes.string
+    rows:PropTypes.string,
+    maxlength:PropTypes.string
 }
 
 export default TextInput

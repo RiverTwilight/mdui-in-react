@@ -44,13 +44,13 @@ class MusicPlayer extends React.Component {
         }
     }
     render(){
-        const { audio } = this.props;
+        const { audio, title } = this.props;
         const { onPlay, playProgress, audioLength } = this.state
         const { audioDom } = this
         return(
             <React.Fragment>
                 <div className="mdui-card mdui-p-a-1">
-                <h3 className="mdui-typo-title">{this.props.title}</h3>
+                <h3 className="mdui-typo-title">{title}</h3>
                     <RangeInput 
                         value={String(playProgress)}
                         min="0" max={String(audioLength)}
@@ -88,7 +88,7 @@ class MusicPlayer extends React.Component {
                         </div>
                     </center>
                     <audio ref={r => this.audioDom = r} style={{display:'none'}} controls="controls">
-                        <source src={this.props.audio} type="audio/mpeg"/>
+                        <source src={audio} type="audio/mpeg"/>
                         Your browser does not support the audio tag.
                     </audio>
                 </div>
@@ -98,11 +98,12 @@ class MusicPlayer extends React.Component {
 }
 
 MusicPlayer.defaultProps = {
-
+    title:'音频播放器'
 }
 
 MusicPlayer.propTypes={
-
+    audio:PropTypes.string.isRequired,
+    title:PropTypes.string
 }
 
 export default MusicPlayer
