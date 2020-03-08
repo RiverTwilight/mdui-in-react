@@ -1,16 +1,74 @@
 {
-	"name": "mdui-in-react",
-	"version": "1.0.0",
-	"description": "help to use mdui in project build with React.js",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+	"_from": "mdui-in-react",
+	"_id": "mdui-in-react@1.0.0",
+	"_inBundle": false,
+	"_integrity": "sha512-NEtbhuZKa/U4Ke++mKBayY1BEfq9oKk6OHrdCfOkIcQczE1f7MfMh/TYC484rfkTzZaScHceSTX1u4kPXCvZdg==",
+	"_location": "/mdui-in-react",
+	"_phantomChildren": {},
+	"_requested": {
+		"type": "tag",
+		"registry": true,
+		"raw": "mdui-in-react",
+		"name": "mdui-in-react",
+		"escapedName": "mdui-in-react",
+		"rawSpec": "",
+		"saveSpec": null,
+		"fetchSpec": "latest"
 	},
-	"author": "rivertwilight<wrj2014@126.com>",
-	"license": "ISC",
+	"_requiredBy": [
+		"#USER",
+		"/"
+	],
+	"_resolved": "https://registry.npmjs.org/mdui-in-react/-/mdui-in-react-1.0.0.tgz",
+	"_shasum": "f77db95fe570ae96e5e35da89b09aa8616420d16",
+	"_spec": "mdui-in-react",
+	"_where": "F:\\Bob\\Web\\Projects\\ygktool",
+	"author": {
+		"name": "rivertwilight",
+		"email": "wrj2014@126.com"
+	},
+	"bundleDependencies": false,
 	"dependencies": {
 		"mdui": "^0.4.3",
+		"prop-types": "^15.7.2",
 		"react": "^16.13.0",
-		"prop-types": "^15.7.2"
-	}
+		"react-dom": "^16.12.0"
+	},
+	"devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "7.0.6",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+	},
+	"babel": {
+		"presets": [
+			"@babel/preset-react",
+			"@babel/preset-env"
+		],
+		"plugins": [
+			"transform-object-assign"
+		]
+	},
+	"keywords": [
+		"react",
+		"react-component",
+		"mdui",
+		"material design"
+	],
+	"deprecated": false,
+	"description": "help to use mdui in project build with React.js",
+	"license": "ISC",
+	"main": "index.js",
+	"name": "mdui-in-react",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "webpack-dev-server --open --port 3000 --hot --host 127.0.0.1"
+	},
+	"version": "1.0.2"
 }

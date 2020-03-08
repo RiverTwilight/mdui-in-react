@@ -6,22 +6,22 @@ import React from 'react'
    *2020-02-16 江村暮
    **/
 
-const ListControlCheck = props => {
-	return(
-		<li className="mdui-list-item mdui-ripple">
-		    <i className="mdui-list-item-icon mdui-icon material-icons">{props.icon}</i>
-		    <div className="mdui-list-item-content">{props.text}</div>
-		    <label className="mdui-switch">
-		        <input 
-			        onChange={e=>{
-			        	props.onCheckedChange(e.target.checked)
-			        }}
-			        type="checkbox" checked={props.checked}
-			    />
-		        <i className="mdui-switch-icon"></i>
-		    </label>
-		</li>
-	)
+const ListControlCheck = ({onCheckedChange, checked, text, icon}) => {
+    return(
+        <li className="mdui-list-item mdui-ripple">
+            <i className="mdui-list-item-icon mdui-icon material-icons">{icon}</i>
+            <div className="mdui-list-item-content">{text}</div>
+            <label className="mdui-switch">
+                <input 
+                    onChange={e=>{
+                        onCheckedChange(e.target.checked)
+                    }}
+                    type="checkbox" checked={checked}
+                />
+                <i className="mdui-switch-icon"></i>
+            </label>
+        </li>
+    )
 }
 
 ListControlCheck.defaultProps = {
@@ -30,10 +30,10 @@ ListControlCheck.defaultProps = {
 }
 
 ListControlCheck.propTypes={
-    text:PropTypes.string.isRequired,//文本
-    checked:PropTypes.bool.isRequired,//是否选中
-    onCheckedChange:PropTypes.func,//回调函数
-    icon:PropTypes.string//图标
+    text:PropTypes.string.isRequired,
+    checked:PropTypes.bool.isRequired,
+    onCheckedChange:PropTypes.func,
+    icon:PropTypes.string
 }
 
 export default ListControlCheck
