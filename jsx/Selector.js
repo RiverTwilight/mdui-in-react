@@ -1,3 +1,6 @@
+import PropTypes from 'prop-types'
+import React from 'react'
+
 class Selector extends React.Component {
     constructor(props) {
         super(props);
@@ -28,4 +31,17 @@ class Selector extends React.Component {
         )
     }
 }
+
+ListControlCheck.defaultProps = {
+    icon: 'settings',
+    onCheckedChange:()=>{}
+}
+
+ListControlCheck.propTypes={
+    text:PropTypes.string.isRequired,
+    checked:PropTypes.bool.isRequired,
+    onCheckedChange:PropTypes.func,
+    icon:PropTypes.string
+}
+
 

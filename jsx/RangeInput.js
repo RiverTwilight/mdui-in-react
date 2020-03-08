@@ -19,12 +19,13 @@ const RangeInput = ({max, min, step, value, title, onValueChange}) => {
 		</div>
 	)
 }
-/*
+
 RangeInput.defaultProps = {
     max:10,
     min:1,
-    step:1,
-    title:'滑块'
+	step:1,
+	value:5,
+    title:'调节'
 }
 
 RangeInput.propTypes={
@@ -35,5 +36,5 @@ RangeInput.propTypes={
     onValueChange:PropTypes.func,
     title:PropTypes.string,
 }
-*/
+
 export default RangeInput
