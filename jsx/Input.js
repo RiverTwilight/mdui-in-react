@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const TextInput = ({icon, rows, header, placeholder, maxlength, value, onTextChange, type, autofocus}) =>{
+const Input = ({icon, rows, header, placeholder, maxlength, value, onTextChange, type, autofocus}) =>{
     icon = (icon)?
     <i className="mdui-icon material-icons">{icon}</i>
     :
@@ -31,7 +31,7 @@ const TextInput = ({icon, rows, header, placeholder, maxlength, value, onTextCha
     )
 }
 
-TextInput.defaultProps = {
+Input.defaultProps = {
     icon: '',
     type: 'text',
     autofocus: false,
@@ -40,7 +40,7 @@ TextInput.defaultProps = {
     value:''
 }
 
-TextInput.propTypes={
+Input.propTypes={
     text:PropTypes.string,
     value:PropTypes.string,
     onTextChange:PropTypes.func,
@@ -51,4 +51,4 @@ TextInput.propTypes={
     maxlength:PropTypes.string
 }
 
-export default TextInput
+export default Input

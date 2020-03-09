@@ -14,11 +14,11 @@
 `npm run dev`
 
 ## 使用
-`
+```
 <TextInput  
     {...props}    
 />
-`
+```
 
 
 # MDUI组件
@@ -26,8 +26,8 @@
 ## 输入框TextInput
 
 ### 参数
-名称|类型|默认|描述
--   | - |  - | -
+Name|type|default|description
+----|----|-------|-----------
 icon|string|不显示|要展示在输入框前的Material Design图标名
 value|string||输入框内容
 maxlength|string|不限制|最大字符数量
@@ -41,9 +41,12 @@ placeholder|string|null|如果有内容（包括空格）将会固定header
 
 ## 列表控制——开关ListControlCheck
 
+
+
+
 ## 滑块RangeInput
-名称|类型|默认|描述
--   | - |  - | -
+Name|type|default|description
+----|----|-------|-----------
 max|string|10|最大值
 min|string|1|最小值
 step|string|1|步长
@@ -52,10 +55,25 @@ onValueChange|string|text|值变化时回调函数，参数是新的值
 title|string|调节|标题文字
 
 
-## 下拉选择
+## 下拉选择Select
+需要传入一个类似下面这个数组作为待选项目。  
 
+```
+[{    
+    name:'通用物体和场景',    
+    value:'normal'    
+}, {    
+    name:'动物',    
+    value:'animal'    
+}]
+```
+### 参数
 
-
+Name|type|default|description
+----|----|-------|-----------
+options|[object]|--|待选项目
+value|number|--|选中项目对应的value
+onOptionChange|func|--|修改选项后的回调函数，参数是选中项目对应的value
 
 
 
@@ -63,6 +81,15 @@ title|string|调节|标题文字
 
 ## 音频播放器MusicPlayer
 接受一个blob链接作为prop，支持调节进度/暂停/播放/下载
+
+### 参数
+Name|type|default|description
+----|----|-------|-----------
+audio|blob|--|音频
+title|string|--|选中项目对应的value
+audioOpt|object|--|audio对象的参数
+
+
 
 ## 颜色选择器ColorInput
 颜色选择器对input[type="color"]进行美化，以一个带有色块的块级按钮呈现。
@@ -76,15 +103,8 @@ onColorChange|func|--|修改颜色后的回调函数，参数是选中项目对�
 
 ## 对话框菜单选择ListControlMenu
 
-一个列表条目，点击后将显示一个包含待选项目的对话框。需要传入一个类似下面这个数组作为待选项目。  
+一个列表条目，点击后将显示一个包含待选项目的对话框。需要传入一个与[下拉选择组件](#下拉选择)一样的数组
 
-`[{    
-    name:'通用物体和场景',    
-    value:'normal'    
-}, {    
-    name:'动物',    
-    value:'animal'    
-}]`
 ### 参数
 名称|类型|默认|描述
 -   | - |  - | -

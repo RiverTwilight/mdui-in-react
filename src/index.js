@@ -2,11 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {
     ListControlMenu,
-    TextInput,
+    Input,
     ColorInput,
     ListControlCheck,
     RangeInput,
-    MusicPlayer
+    MusicPlayer,
+    Select
 } from '../test'
 
 const menu_types = [{
@@ -23,14 +24,15 @@ class Ui extends React.Component {
         super(props);
         this.state = {
             inputText:'',
-            menu_type:0
+            menu_type:0,
+            SelectorValue:'animal'
         }
     }
     render(){
-        const { inputText, menu_type } = this.state
+        const { inputText, menu_type, SelectorValue } = this.state
         return(
             <React.Fragment>
-                <TextInput
+                <Input
                     onTextChange={newText=>{
                         this.setState({inputText:newText})
                     }}
@@ -48,6 +50,13 @@ class Ui extends React.Component {
                         this.setState({menu_type:checked})
                     }}
                     items={menu_types}
+                />
+                <Select
+                    options={menu_types}
+                    onOptionChange={newOpt=>{
+                        this.setState({SelectorValue:newOpt})
+                    }}
+                    value={SelectorValue}
                 />
             </React.Fragment>
         )
