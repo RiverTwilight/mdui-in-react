@@ -13,10 +13,7 @@ const Input = ({icon, rows, header, placeholder, value, onValueChange, ...others
     null
     return(
         <div className={`mdui-textfield ${(placeholder)?'':'mdui-textfield-floating-label'}`}>
-            {(icon)?
-                <i className="mdui-icon material-icons">{icon}</i>
-                :
-                null}{Lable}
+            {icon}{Lable}
             <TagType
                 {...others}
                 placeholder={placeholder} 
@@ -32,7 +29,6 @@ const Input = ({icon, rows, header, placeholder, value, onValueChange, ...others
 }
 
 Input.defaultProps = {
-    icon: '',
     placeholder:'',
     value:''
 }

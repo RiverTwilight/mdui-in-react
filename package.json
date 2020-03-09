@@ -1,7 +1,7 @@
 {
   "name": "mdui-in-react",
-  "version": "1.0.0",
-  "description": "一个基于mdui(https://mdui.org)的React UI库，对mdui内置组件的封装（包括事件回调），还增加了一些扩展组件。",
+  "version": "1.1.0",
+  "description": "A react UI Library Based on mdui. It encapsulates the built-in components of mdui (including callback events), and adds some practical extension components.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

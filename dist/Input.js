@@ -59,7 +59,6 @@ var Input = function Input(_ref) {
 };
 
 Input.defaultProps = {
-    icon: '',
     placeholder: '',
     value: ''
 };

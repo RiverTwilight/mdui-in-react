@@ -101,7 +101,7 @@ other|object|--|Other parameters that can be used for audio tags, using JSX syna
 The color selector beautifies the input[type= "color"] tag as a block level button with color blocks.
 
 Name|type|default|description
--   | - |  - | -
+----|----|-------|-----------
 value|string|--|color value
 text|string|"选择颜色"|标题文字
 onColorChange|func|--|The callback function after modifying the color. The parameter is the color value
@@ -119,7 +119,7 @@ Name|type|default|description
 ----|----|-------|-----------
 items|array|--|Items to be selected
 checked|number|--|**Array subscript** corresponding to the selected item
-onCheckedChange|func|--|The callback function after modifying the option. **The parameter is the array subscript corresponding to the selected item**
+onCheckedChange|func|--|The callback function after modifying the option. **The parameter is value attribute**
 text|string|"请选择"|标题文字
 icon|string|settings|The name of the material design icon to display in front of the input
 
