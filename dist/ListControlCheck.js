@@ -1,9 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
 var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
@@ -22,7 +18,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var ListControlCheck = function ListControlCheck(_ref) {
     var onCheckedChange = _ref.onCheckedChange,
         checked = _ref.checked,
-        text = _ref.text,
+        title = _ref.title,
         icon = _ref.icon;
 
     return _react2.default.createElement(
@@ -36,7 +32,7 @@ var ListControlCheck = function ListControlCheck(_ref) {
         _react2.default.createElement(
             'div',
             { className: 'mdui-list-item-content' },
-            text
+            title
         ),
         _react2.default.createElement(
             'label',
@@ -54,14 +50,15 @@ var ListControlCheck = function ListControlCheck(_ref) {
 
 ListControlCheck.defaultProps = {
     icon: 'settings',
-    onCheckedChange: function onCheckedChange() {}
+    onCheckedChange: function onCheckedChange() {},
+    title: '开关'
 };
 
 ListControlCheck.propTypes = {
-    text: _propTypes2.default.string.isRequired,
+    title: _propTypes2.default.string.isRequired,
     checked: _propTypes2.default.bool.isRequired,
     onCheckedChange: _propTypes2.default.func,
     icon: _propTypes2.default.string
 };
 
-exports.default = ListControlCheck;
+module.exports = ListControlCheck;

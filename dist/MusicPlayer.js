@@ -1,8 +1,12 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -99,7 +103,10 @@ var MusicPlayer = function (_React$Component) {
         value: function render() {
             var _this3 = this;
 
-            var audio = this.props.audio;
+            var _props = this.props,
+                audio = _props.audio,
+                title = _props.title,
+                other = (0, _objectWithoutProperties3.default)(_props, ['audio', 'title']);
             var _state = this.state,
                 onPlay = _state.onPlay,
                 playProgress = _state.playProgress,
@@ -115,7 +122,7 @@ var MusicPlayer = function (_React$Component) {
                     _react2.default.createElement(
                         'h3',
                         { className: 'mdui-typo-title' },
-                        this.props.title
+                        title
                     ),
                     _react2.default.createElement(_RangeInput2.default, {
                         value: String(playProgress),
@@ -173,10 +180,10 @@ var MusicPlayer = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                         'audio',
-                        { ref: function ref(r) {
+                        (0, _extends3.default)({}, other, { ref: function ref(r) {
                                 return _this3.audioDom = r;
-                            }, style: { display: 'none' }, controls: 'controls' },
-                        _react2.default.createElement('source', { src: this.props.audio, type: 'audio/mpeg' }),
+                            }, style: { display: 'none' }, controls: 'controls' }),
+                        _react2.default.createElement('source', { src: audio, type: 'audio/mpeg' }),
                         'Your browser does not support the audio tag.'
                     )
                 )
@@ -186,8 +193,13 @@ var MusicPlayer = function (_React$Component) {
     return MusicPlayer;
 }(_react2.default.Component);
 
-MusicPlayer.defaultProps = {};
+MusicPlayer.defaultProps = {
+    title: '音频播放器'
+};
 
-MusicPlayer.propTypes = {};
+MusicPlayer.propTypes = {
+    audio: _propTypes2.default.string.isRequired,
+    title: _propTypes2.default.string
+};
 
-exports.default = MusicPlayer;
+module.exports = MusicPlayer;

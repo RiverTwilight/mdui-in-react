@@ -1,9 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -45,21 +41,22 @@ var RangeInput = function RangeInput(_ref) {
 		)
 	);
 };
-/*
-RangeInput.defaultProps = {
-    max:10,
-    min:1,
-    step:1,
-    title:'滑块'
-}
 
-RangeInput.propTypes={
-    max:PropTypes.string,
-    min:PropTypes.string,
-    step:PropTypes.string,
-    value:PropTypes.string,
-    onValueChange:PropTypes.func,
-    title:PropTypes.string,
-}
-*/
-exports.default = RangeInput;
+RangeInput.defaultProps = {
+	max: 10,
+	min: 1,
+	step: 1,
+	value: 5,
+	title: '调节'
+};
+
+RangeInput.propTypes = {
+	max: _propTypes2.default.string,
+	min: _propTypes2.default.string,
+	step: _propTypes2.default.string,
+	value: _propTypes2.default.string,
+	onValueChange: _propTypes2.default.func,
+	title: _propTypes2.default.string
+};
+
+module.exports = RangeInput;

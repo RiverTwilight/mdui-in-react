@@ -1,9 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
 var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
@@ -112,15 +108,16 @@ var ListControlMenu = function ListControlMenu(props) {
 
 ListControlMenu.defaultProps = {
 	icon: 'settings',
-	onCheckedChange: function onCheckedChange() {}
+	onCheckedChange: function onCheckedChange() {},
+	text: '请选择...'
 };
 
 ListControlMenu.propTypes = {
-	text: _propTypes2.default.string.isRequired, //文本
+	text: _propTypes2.default.string, //文本
 	checked: _propTypes2.default.number.isRequired, //选中的项目名索引
 	items: _propTypes2.default.array.isRequired, //待选项目
 	onCheckedChange: _propTypes2.default.func, //回调函数
 	icon: _propTypes2.default.string //图标
 };
 
-exports.default = ListControlMenu;
+module.exports = ListControlMenu;
