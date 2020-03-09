@@ -1,17 +1,8 @@
-import ListControlMenu from './jsx/ListControlMenu'
-import Input from './jsx/Input'
-import ColorInput from './jsx/ColorInput'
-import ListControlCheck from './jsx/ListControlCheck'
-import RangeInput from './jsx/RangeInput'
-import MusicPlayer from './jsx/MusicPlayer'
-import Select from './jsx/Select'
+module.exports.ListControlMenu = require( './jsx/ListControlMenu')
+module.exports.Input = require( './jsx/Input')
+module.exports.ColorInput = require( './jsx/ColorInput')
+module.exports.ListControlCheck = require( './jsx/ListControlCheck')
+module.exports.RangeInput = require( './jsx/RangeInput')
+module.exports.MusicPlayer = require( './jsx/MusicPlayer')
+module.exports.Select = require( './jsx/Select')
 
-export {
-    ListControlMenu,
-    Input,
-    ColorInput,
-    ListControlCheck,
-    RangeInput,
-    MusicPlayer,
-    Select
-}

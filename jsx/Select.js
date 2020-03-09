@@ -44,4 +44,4 @@ Select.propTypes = {
     onOptionChange:PropTypes.func.isRequired
 }
 
-export default Select
+module.exports = Select

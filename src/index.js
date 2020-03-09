@@ -10,6 +10,7 @@ import {
     Select
 } from '../test'
 
+console.log(Input)
 const menu_types = [{
     name:'通用物体和场景',
     value:'normal'
@@ -25,21 +26,21 @@ class Ui extends React.Component {
         this.state = {
             inputText:'',
             menu_type:0,
-            SelectorValue:'animal'
+            SelectorValue:'animal',
+            checked:true
         }
     }
     render(){
-        const { inputText, menu_type, SelectorValue } = this.state
+        const { checked, inputText, menu_type, SelectorValue } = this.state
         return(
             <React.Fragment>
                 <Input
-                    onTextChange={newText=>{
+                    onValueChange={newText=>{
                         this.setState({inputText:newText})
                     }}
                     value={inputText}
                     header="输入内容"
                     icon="link"
-                    maxlength="100"
                     type="number"
                 /> 
                 <ListControlMenu
@@ -50,6 +51,13 @@ class Ui extends React.Component {
                         this.setState({menu_type:checked})
                     }}
                     items={menu_types}
+                />
+                <ListControlCheck
+                    checked={checked}
+                    onCheckedChange={ifCheck=>{
+                        this.setState({checked:ifCheck})
+                    }}
+                    title="这是一个开关"
                 />
                 <Select
                     options={menu_types}

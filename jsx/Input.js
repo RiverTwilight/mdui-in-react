@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Input = ({icon, rows, header, placeholder, maxlength, value, onTextChange, type, autofocus}) =>{
+const Input = ({icon, rows, header, placeholder, value, onValueChange, ...others}) =>{
     icon = (icon)?
     <i className="mdui-icon material-icons">{icon}</i>
     :
@@ -18,14 +18,14 @@ const Input = ({icon, rows, header, placeholder, maxlength, value, onTextChange,
                 :
                 null}{Lable}
             <TagType
-                maxLength={maxlength}
+                {...others}
                 placeholder={placeholder} 
                 rows={rows}
                 onChange={e=>{
-                    onTextChange(e.target.value)
+                    onValueChange(e.target.value)
                 }} 
                 value={value}
-                autoFocus={autofocus} type={type} className="mdui-textfield-input">
+                className="mdui-textfield-input">
             </TagType>
         </div>
     )
@@ -33,22 +33,16 @@ const Input = ({icon, rows, header, placeholder, maxlength, value, onTextChange,
 
 Input.defaultProps = {
     icon: '',
-    type: 'text',
-    autofocus: false,
-    maxlength: null,
     placeholder:'',
     value:''
 }
 
 Input.propTypes={
-    text:PropTypes.string,
     value:PropTypes.string,
-    onTextChange:PropTypes.func,
+    onValueChange:PropTypes.func,
     icon:PropTypes.string,
-    autofocus: PropTypes.bool,
     placeholder:PropTypes.string,
-    rows:PropTypes.string,
-    maxlength:PropTypes.string
+    rows:PropTypes.string
 }
 
-export default Input
+module.exports = Input

@@ -44,4 +44,4 @@ Color.propTypes={
     onColorChange:PropTypes.func,//回调函数
 }
 
-export default Color
+module.exports = Color

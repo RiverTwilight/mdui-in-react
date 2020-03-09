@@ -37,4 +37,4 @@ RangeInput.propTypes={
     title:PropTypes.string,
 }
 
-export default RangeInput
+module.exports = RangeInput

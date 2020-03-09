@@ -6,11 +6,11 @@ import React from 'react'
    *2020-02-16 江村暮
    **/
 
-const ListControlCheck = ({onCheckedChange, checked, text, icon}) => {
+const ListControlCheck = ({onCheckedChange, checked, title, icon}) => {
     return(
         <li className="mdui-list-item mdui-ripple">
             <i className="mdui-list-item-icon mdui-icon material-icons">{icon}</i>
-            <div className="mdui-list-item-content">{text}</div>
+            <div className="mdui-list-item-content">{title}</div>
             <label className="mdui-switch">
                 <input 
                     onChange={e=>{
@@ -26,14 +26,15 @@ const ListControlCheck = ({onCheckedChange, checked, text, icon}) => {
 
 ListControlCheck.defaultProps = {
     icon: 'settings',
-    onCheckedChange:()=>{}
+    onCheckedChange:()=>{},
+    title: '开关'
 }
 
 ListControlCheck.propTypes={
-    text:PropTypes.string.isRequired,
+    title:PropTypes.string.isRequired,
     checked:PropTypes.bool.isRequired,
     onCheckedChange:PropTypes.func,
     icon:PropTypes.string
 }
 
-export default ListControlCheck
+module.exports = ListControlCheck

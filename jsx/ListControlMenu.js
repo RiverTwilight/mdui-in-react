@@ -69,4 +69,4 @@ ListControlMenu.propTypes = {
 	icon: PropTypes.string //图标
 }
 
-export default ListControlMenu
+module.exports = ListControlMenu

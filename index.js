@@ -1,15 +1,8 @@
-import ListControlMenu from './dist/ListControlMenu'
-import TextInput from './dist/TextInput'
-import ColorInput from './dist/ColorInput'
-import ListControlCheck from './dist/ListControlCheck'
-import RangeInput from './dist/RangeInput'
-import MusicPlayer from './dist/MusicPlayer'
+module.exports.ListControlMenu = require( './dist/ListControlMenu')
+module.exports.Input = require( './dist/Input')
+module.exports.ColorInput = require( './dist/ColorInput')
+module.exports.ListControlCheck = require( './dist/ListControlCheck')
+module.exports.RangeInput = require( './dist/RangeInput')
+module.exports.MusicPlayer = require( './dist/MusicPlayer')
+module.exports.Select = require( './dist/Select')
 
-export {
-    ListControlMenu,
-    TextInput,
-    ColorInput,
-    ListControlCheck,
-    RangeInput,
-    MusicPlayer
-}

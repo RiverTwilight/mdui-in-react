@@ -1,19 +1,20 @@
 # mdui-in-react
 
-`mdui-in-react`是一个基于[mdui](https://mdui.org)的React UI库，对mdui内置组件进行了封装（包括回调事件），还增加了一些实用扩展组件。
+`Mdui in react` is a react UI Library Based on [mdui](https://mdui.org). It encapsulates the built-in components of mdui (including callback events), and adds some practical extension components.
 
-此项目是我的网站——[云极客工具](https://www.ygktool.cn)的衍生项目。同时也感谢mdui这款优秀的前端框架
+This project is a derivative project of my website [ygktool](https://www.ygktool.cn). Thanks to mdui for its excellent front-end framework!
 
-# 开始
+# Quick Start
 
-## 安装
+## Install
 `npm i mdui-in-react`
 
-## 测试
-已经配置好了webpack-sever，执行以下命令即可测试
-`npm run dev`
+## Test
+With the webpack-sever configured, execute the following command to test
 
-## 使用
+```npm run dev```
+
+## Usage
 ```
 <TextInput  
     {...props}    
@@ -21,42 +22,48 @@
 ```
 
 
-# MDUI组件
+# MDUI Component
 
-## 输入框TextInput
+## 输入框Input
 
-### 参数
+### Options
 Name|type|default|description
 ----|----|-------|-----------
-icon|string|不显示|要展示在输入框前的Material Design图标名
-value|string||输入框内容
-maxlength|string|不限制|最大字符数量
-autofocus|boolean|false|自动聚焦
-type|string|text|输入内容
-rows|string|null|如过存在则自动切换为textarea
-header|string|输入框|标签文字，默认浮动
-placeholder|string|null|如果有内容（包括空格）将会固定header
+icon|string|No display|The name of the material design icon to display in front of the input
+value|string|--|Input content
+onValueChange|func|--|The callback function after the value of the input box changes. The parameter is the new value
+rows|string|--|**If it exists, it will automatically switch to the textarea label**
+header|string|输入框|Label Text
+placeholder|string|null|If there is content (including space), the header will be fixed
+other|object|--|Other parameters that can be used for input tags, using JSX synatx
 
 
 
 ## 列表控制——开关ListControlCheck
 
+### Options
+Name|type|default|description
+----|----|-------|-----------
+icon|string|settings|The name of the material design icon to display in front of the litem
+checked|boolean|true|if check
+onCheckedChange|func|--|Callback function when value changes, parameter is new value
+title|string|开关|just as its name implies
+
 
 
 
 ## 滑块RangeInput
+
+### Options
 Name|type|default|description
 ----|----|-------|-----------
-max|string|10|最大值
-min|string|1|最小值
-step|string|1|步长
-value|boolean|5|值
-onValueChange|string|text|值变化时回调函数，参数是新的值
-title|string|调节|标题文字
-
+value|string|5|just as its name implies
+onValueChange|string|text|Callback function when value changes, the parameter is new value
+title|string|调节|just as its name implies
+other|object|--|Other parameters that can be used for input[type='range'] tags(Such as `max` `step`..), using JSX synatx.
 
 ## 下拉选择Select
-需要传入一个类似下面这个数组作为待选项目。  
+You need to pass in an array similar to the following as the item to be selected.`Value` is usually used as an identifier 
 
 ```
 [{    
@@ -67,54 +74,60 @@ title|string|调节|标题文字
     value:'animal'    
 }]
 ```
-### 参数
-
+### Options
 Name|type|default|description
 ----|----|-------|-----------
-options|[object]|--|待选项目
-value|number|--|选中项目对应的value
-onOptionChange|func|--|修改选项后的回调函数，参数是选中项目对应的value
+options|[object]|--|Items to be selected
+value|number|--|Value corresponding to the selected item
+onOptionChange|func|--|The callback function after the option is modified. The parameter is the value corresponding to the selected item
 
 
 
-# 扩展组件
+# Extended components
 
 ## 音频播放器MusicPlayer
-接受一个blob链接作为prop，支持调节进度/暂停/播放/下载
+Accept a blob link as a prop, support adjusting progress / pause / play / download
 
-### 参数
+### options
 Name|type|default|description
 ----|----|-------|-----------
-audio|blob|--|音频
-title|string|--|选中项目对应的value
-audioOpt|object|--|audio对象的参数
+audio|blob|--|Audio source
+title|string|--|A title in the top left corner of card
+other|object|--|Other parameters that can be used for audio tags, using JSX synatx.
 
 
 
 ## 颜色选择器ColorInput
-颜色选择器对input[type="color"]进行美化，以一个带有色块的块级按钮呈现。
-名称|类型|默认|描述
+The color selector beautifies the input[type= "color"] tag as a block level button with color blocks.
+
+Name|type|default|description
 -   | - |  - | -
-value|string|--|颜色值
+value|string|--|color value
 text|string|"选择颜色"|标题文字
-onColorChange|func|--|修改颜色后的回调函数，参数是选中项目对应的数组下标
+onColorChange|func|--|The callback function after modifying the color. The parameter is the color value
+other|object|--|Other parameters that can be used for input[type='color'] tags, using JSX synatx.
+
 
 
 
 ## 对话框菜单选择ListControlMenu
 
-一个列表条目，点击后将显示一个包含待选项目的对话框。需要传入一个与[下拉选择组件](#下拉选择)一样的数组
+A list item, click to display a dialog box containing the items to be selected. You need to pass in an array similar to [下拉选择](#下拉选择)
 
-### 参数
-名称|类型|默认|描述
--   | - |  - | -
-items|string|不显示|要展示在前的Material Design图标名
-checked|number|--|选中项目对应的数组下标
-onCheckedChange|func|--|修改选项后的回调函数，参数是选中项目对应的数组下标
+### Optinos
+Name|type|default|description
+----|----|-------|-----------
+items|array|--|Items to be selected
+checked|number|--|**Array subscript** corresponding to the selected item
+onCheckedChange|func|--|The callback function after modifying the option. **The parameter is the array subscript corresponding to the selected item**
 text|string|"请选择"|标题文字
-type|string|text|输入内容
+icon|string|settings|The name of the material design icon to display in front of the input
 
 
 
-# 关于
-作者是一名在校高一学生
+# Related resources
+* MDUI：[https://mdui.org](https://mdui.org)
+* Material Design Icons [https://www.mdui.org/docs/material_icon](https://www.mdui.org/docs/material_icon)
+
+# About
+The author is a senior one student
