@@ -41,11 +41,7 @@ var Input = function Input(_ref) {
     return _react2.default.createElement(
         'div',
         { className: 'mdui-textfield ' + (placeholder ? '' : 'mdui-textfield-floating-label') },
-        icon ? _react2.default.createElement(
-            'i',
-            { className: 'mdui-icon material-icons' },
-            icon
-        ) : null,
+        icon,
         Lable,
         _react2.default.createElement(TagType, (0, _extends3.default)({}, others, {
             placeholder: placeholder,

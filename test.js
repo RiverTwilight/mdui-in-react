@@ -5,4 +5,5 @@ module.exports.ListControlCheck = require( './jsx/ListControlCheck')
 module.exports.RangeInput = require( './jsx/RangeInput')
 module.exports.MusicPlayer = require( './jsx/MusicPlayer')
 module.exports.Select = require( './jsx/Select')
+module.exports.ToTop = require('./jsx/ToTop')
 

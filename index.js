@@ -5,4 +5,4 @@ module.exports.ListControlCheck = require( './dist/ListControlCheck')
 module.exports.RangeInput = require( './dist/RangeInput')
 module.exports.MusicPlayer = require( './dist/MusicPlayer')
 module.exports.Select = require( './dist/Select')
-
+module.exports.ToTop = require('./dist/ToTop')

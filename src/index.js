@@ -7,7 +7,8 @@ import {
     ListControlCheck,
     RangeInput,
     MusicPlayer,
-    Select
+    Select,
+    ToTop
 } from '../test'
 
 console.log(Input)
@@ -34,6 +35,7 @@ class Ui extends React.Component {
         const { checked, inputText, menu_type, SelectorValue } = this.state
         return(
             <React.Fragment>
+                <ToTop />
                 <Input
                     onValueChange={newText=>{
                         this.setState({inputText:newText})

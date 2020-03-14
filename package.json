@@ -1,8 +1,9 @@
 {
   "name": "mdui-in-react",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A react UI Library Based on mdui. It encapsulates the built-in components of mdui (including callback events), and adds some practical extension components.",
   "main": "index.js",
+  "homepage": "https://github.com/RiverTwilight/mdui-in-react",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --open --port 4000 --hot --host 127.0.0.1",
