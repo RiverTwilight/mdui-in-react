@@ -24,12 +24,16 @@ class ToTop extends React.Component{
         const { isHide } = this.state
         return(
             <button 
-                onClick={()=>window.location.href="#"} 
+                onClick={()=>{
+                    window.toTop = setInterval(() => {
+                        if(document.documentElement.scrollTop === 0)clearInterval(window.toTop)
+                        document.documentElement.scrollTop -= 200
+                    }, 50);
+                }}
                 className={`mdui-color-theme mdui-fab mdui-fab-fixed ${isHide?'mdui-fab-hide':''}`}>
                 <i className="mdui-icon material-icons">&#xe5d8;</i>
             </button>
         )
     }
 }
-
 module.exports = ToTop

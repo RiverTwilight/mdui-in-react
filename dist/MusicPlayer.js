@@ -61,7 +61,8 @@ var MusicPlayer = function (_React$Component) {
 
         _this.state = {
             onPlay: false,
-            playProgress: 0
+            playProgress: 0,
+            audioLength: 2000
         };
         return _this;
     }
@@ -106,7 +107,9 @@ var MusicPlayer = function (_React$Component) {
             var _props = this.props,
                 audio = _props.audio,
                 title = _props.title,
-                other = (0, _objectWithoutProperties3.default)(_props, ['audio', 'title']);
+                subtitle = _props.subtitle,
+                cover = _props.cover,
+                other = (0, _objectWithoutProperties3.default)(_props, ['audio', 'title', 'subtitle', 'cover']);
             var _state = this.state,
                 onPlay = _state.onPlay,
                 playProgress = _state.playProgress,
@@ -118,64 +121,90 @@ var MusicPlayer = function (_React$Component) {
                 null,
                 _react2.default.createElement(
                     'div',
-                    { className: 'mdui-card mdui-p-a-1' },
+                    { style: {
+                            maxWidth: '500px'
+                        }, className: 'mdui-card mdui-p-l-3' },
                     _react2.default.createElement(
-                        'h3',
-                        { className: 'mdui-typo-title' },
-                        title
-                    ),
-                    _react2.default.createElement(_RangeInput2.default, {
-                        value: String(playProgress),
-                        min: '0', max: String(audioLength),
-                        onValueChange: function onValueChange(newValue) {
-                            _this3.setState({ playProgress: newValue });
-                            audioDom.currentTime = newValue;
-                        }
-                    }),
-                    _react2.default.createElement(
-                        'center',
-                        null,
+                        'div',
+                        { className: 'mdui-row mdui-row-gapless' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'mdui-btn-group' },
+                            { className: 'mdui-col-xs-8 mdui-p-t-1' },
                             _react2.default.createElement(
-                                'button',
-                                {
-                                    onClick: function onClick() {
-                                        if (onPlay) {
-                                            audioDom.pause();
-                                            _this3.setState({
-                                                onPlay: false
-                                            });
-                                        } else {
-                                            audioDom.play();
-                                            _this3.setState({
-                                                onPlay: true
-                                            });
-                                        }
-                                    },
-                                    type: 'button', className: 'mdui-btn' },
-                                _react2.default.createElement(
-                                    'i',
-                                    { className: 'mdui-icon material-icons' },
-                                    onPlay ? 'pause' : 'play_arrow'
-                                )
+                                'div',
+                                { 'class': 'mdui-typo-headline' },
+                                title
                             ),
+                            subtitle ? _react2.default.createElement(
+                                'div',
+                                { 'class': 'mdui-typo-subheading-opacity' },
+                                subtitle
+                            ) : null,
+                            _react2.default.createElement(_RangeInput2.default, {
+                                value: String(playProgress),
+                                title: '',
+                                min: '0', max: String(audioLength),
+                                onValueChange: function onValueChange(newValue) {
+                                    _this3.setState({ playProgress: newValue });
+                                    audioDom.currentTime = newValue;
+                                }
+                            }),
                             _react2.default.createElement(
-                                'a',
-                                { rel: 'noopener noreferrer', target: '_blank', href: audio, download: true },
+                                'center',
+                                null,
                                 _react2.default.createElement(
-                                    'button',
-                                    {
-                                        type: 'button',
-                                        className: 'mdui-btn' },
+                                    'div',
+                                    { className: 'mdui-btn-group' },
                                     _react2.default.createElement(
-                                        'i',
-                                        { className: 'mdui-icon material-icons' },
-                                        'file_download'
+                                        'button',
+                                        {
+                                            onClick: function onClick() {
+                                                if (onPlay) {
+                                                    audioDom.pause();
+                                                    _this3.setState({
+                                                        onPlay: false
+                                                    });
+                                                } else {
+                                                    audioDom.play();
+                                                    _this3.setState({
+                                                        onPlay: true
+                                                    });
+                                                }
+                                            },
+                                            type: 'button', className: 'mdui-btn' },
+                                        _react2.default.createElement(
+                                            'i',
+                                            { className: 'mdui-icon material-icons' },
+                                            onPlay ? 'pause' : 'play_arrow'
+                                        )
+                                    ),
+                                    _react2.default.createElement(
+                                        'a',
+                                        { rel: 'noopener noreferrer', target: '_blank', href: audio, download: true },
+                                        _react2.default.createElement(
+                                            'button',
+                                            {
+                                                type: 'button',
+                                                className: 'mdui-btn' },
+                                            _react2.default.createElement(
+                                                'i',
+                                                { className: 'mdui-icon material-icons' },
+                                                'file_download'
+                                            )
+                                        )
                                     )
                                 )
                             )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { style: {
+                                    height: '160px'
+                                }, className: 'mdui-col-xs-4' },
+                            _react2.default.createElement('img', { style: {
+                                    width: '100%',
+                                    height: '100%'
+                                }, src: cover })
                         )
                     ),
                     _react2.default.createElement(
@@ -194,12 +223,14 @@ var MusicPlayer = function (_React$Component) {
 }(_react2.default.Component);
 
 MusicPlayer.defaultProps = {
-    title: '音频播放器'
+    title: '音频播放器',
+    cover: "http://p2.music.126.net/uychhBHUhQu51wsL7_ue0Q==/6628955604788939.jpg?param=130y130"
 };
 
 MusicPlayer.propTypes = {
     audio: _propTypes2.default.string.isRequired,
-    title: _propTypes2.default.string
+    title: _propTypes2.default.string,
+    subtitle: _propTypes2.default.string
 };
 
 module.exports = MusicPlayer;

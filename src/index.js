@@ -54,6 +54,10 @@ class Ui extends React.Component {
                     }}
                     items={menu_types}
                 />
+                <MusicPlayer
+                    title="My Revolution"
+                    subtitle="Miracle Of Sound"
+                />
                 <ListControlCheck
                     checked={checked}
                     onCheckedChange={ifCheck=>{

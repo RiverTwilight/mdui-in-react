@@ -68,7 +68,10 @@ var ToTop = function (_React$Component) {
                 "button",
                 {
                     onClick: function onClick() {
-                        return window.location.href = "#";
+                        window.toTop = setInterval(function () {
+                            if (document.documentElement.scrollTop === 0) clearInterval(window.toTop);
+                            document.documentElement.scrollTop -= 200;
+                        }, 50);
                     },
                     className: "mdui-color-theme mdui-fab mdui-fab-fixed " + (isHide ? 'mdui-fab-hide' : '') },
                 _react2.default.createElement(
