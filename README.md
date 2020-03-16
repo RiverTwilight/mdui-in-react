@@ -92,7 +92,9 @@ Accept a blob link as a prop, support adjusting progress / pause / play / downlo
 Name|type|default|description
 ----|----|-------|-----------
 audio|blob|--|Audio source
-title|string|--|A title in the top left corner of card
+title|string|音频播放器|A title in the top left corner of card
+subtitle|string|--|A subtitle in the top left corner of card
+cover|string|https://s4.music.126.net/style/web2/img/default/default_album.jpg|A img in the left of card
 other|object|--|Other parameters that can be used for audio tags, using JSX synatx.
 
 
@@ -107,8 +109,8 @@ text|string|"选择颜色"|标题文字
 onColorChange|func|--|The callback function after modifying the color. The parameter is the color value
 other|object|--|Other parameters that can be used for input[type='color'] tags, using JSX synatx.
 
-
-
+## 回顶按钮ToTop
+When the screen is more than 148px away from the top, it will automatically appear in the lower left corner. After clicking, the screen will smoothly scroll to the top.
 
 ## 对话框菜单选择ListControlMenu
 

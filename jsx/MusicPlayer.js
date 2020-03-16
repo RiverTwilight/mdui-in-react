@@ -116,7 +116,7 @@ class MusicPlayer extends React.Component {
 
 MusicPlayer.defaultProps = {
     title:'音频播放器',
-    cover:"http://p2.music.126.net/uychhBHUhQu51wsL7_ue0Q==/6628955604788939.jpg?param=130y130"
+    cover:"https://s4.music.126.net/style/web2/img/default/default_album.jpg"
 }
 
 MusicPlayer.propTypes={
