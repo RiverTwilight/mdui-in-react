@@ -1,4 +1,16 @@
 # mdui-in-react
+```
+<Input
+    onValueChange={newText=>{
+        this.setState({inputText:newText})
+    }}
+    value={inputText}
+    header="输入内容"
+    icon="link"
+    error="这是一个可选的错误信息"
+    type="number"
+/> 
+```
 
 `Mdui in react` is a react UI Library Based on [mdui](https://mdui.org). It encapsulates the built-in components of mdui (including callback events), and adds some practical extension components.
 
@@ -9,18 +21,12 @@ This project is a derivative project of my website [ygktool](https://www.ygktool
 ## Install
 `npm i mdui-in-react`
 
-## Test
-With the webpack-sever configured, execute the following command to test
-
-```npm run dev```
-
 ## Usage
 ```
-<TextInput  
+<Input  
     {...props}    
 />
 ```
-
 
 # MDUI Component
 
@@ -122,7 +128,7 @@ Name|type|default|description
 items|array|--|Items to be selected
 checked|number|--|**Array subscript** corresponding to the selected item
 onCheckedChange|func|--|The callback function after modifying the option. **The parameter is value attribute**
-text|string|"请选择"|标题文字
+title|string|"请选择"|标题文字
 icon|string|settings|The name of the material design icon to display in front of the input
 
 
@@ -133,3 +139,5 @@ icon|string|settings|The name of the material design icon to display in front of
 
 # About
 The author is a senior one student
+
+# License

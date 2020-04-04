@@ -1,16 +1,30 @@
-import PropTypes from 'prop-types'
-import React from 'react'
-import mdui from 'mdui'
+import * as React from 'react'
+import * as mdui from 'mdui'
 
-class Select extends React.Component {
-    constructor(props) {
+/**
+  *下拉选择
+  **/
+
+interface SelectProps{
+    options:{name: string, value: string}[],
+    value: string,
+    onOptionChange(value: string): void
+}
+
+interface SelectState{
+    dom: any
+}
+
+export default class Select extends React.Component<SelectProps, SelectState> {
+    selectDom: any
+    constructor(props: any) {
         super(props);
         this.state = {
             dom:null
         }
     }
     componentDidMount(){
-        var inst = new mdui.Select(this.selectDom);
+        var inst = new mdui.Drawer(this.selectDom);
         this.setState({dom: inst})
     }
     componentDidUpdate(){
@@ -25,7 +39,8 @@ class Select extends React.Component {
                     onOptionChange(e.target.value)
                 }}
                 ref={r => this.selectDom = r}
-                value={value} className="mdui-select">
+                value={value} className="mdui-select"
+            >
                 {options.map(a=>(
                     <option key={a.value} value={a.value}>{a.name}</option>
                 ))}
@@ -33,15 +48,3 @@ class Select extends React.Component {
         )
     }
 }
-
-Select.defaultProps = {
-    onOptionChange:()=>{}
-}
-
-Select.propTypes = {
-    options:PropTypes.arrayOf(PropTypes.object).isRequired,
-    value:PropTypes.string.isRequired,
-    onOptionChange:PropTypes.func.isRequired
-}
-
-module.exports = Select

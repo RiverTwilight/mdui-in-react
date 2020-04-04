@@ -1,41 +1,48 @@
 {
   "name": "mdui-in-react",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "description": "A react UI Library Based on mdui. It encapsulates the built-in components of mdui (including callback events), and adds some practical extension components.",
   "main": "index.js",
   "homepage": "https://github.com/RiverTwilight/mdui-in-react",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --open --port 4000 --hot --host 127.0.0.1",
     "compile": "babel jsx -d dist --presets react"
   },
   "keywords": [
-  	"react",
-  	"mdui",
-  	"ui",
-  	"material design"
+    "react",
+    "mdui",
+    "ui",
+    "material design"
   ],
   "author": {
-  	"name": "rivertwilight"
+    "name": "rivertwilight"
   },
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^13.11.0",
     "mdui": "^0.4.3",
-    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "@types/react": "^16.9.32",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "html-webpack-plugin": "^3.2.0",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.8.3",
     "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-cli": "^3.3.11"
   },
-  "files":["package.json","dist","index.js","README.md"]
+  "files": [
+    "package.json",
+    "built",
+    "index.js",
+    "README.md"
+  ]
 }

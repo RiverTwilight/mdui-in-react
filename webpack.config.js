@@ -1,22 +1,50 @@
-var path = require('path')
-
-// 导入在内存中自动生成index页面的插件
-const HtmlWebPackPlugin = require('html-webpack-plugin')
-const htmlPlugin = new HtmlWebPackPlugin({
-    template: path.join(__dirname, './src/index.html'),
-    filename: 'index.html' // 生成的内存中首页的名称
-});
-
 module.exports = {
-    mode: 'development',
-    plugins: [
-        htmlPlugin
-    ],
+    entry: "./test/src/index.tsx",
+    output: {
+        filename: "bundle.js",
+        path: __dirname + "/test/dist"
+    },
+
+    mode:"development",
+
+    // Enable sourcemaps for debugging webpack's output.
+    devtool: "source-map",
+
+    resolve: {
+        // Add '.ts' and '.tsx' as resolvable extensions.
+        extensions: [".ts", ".tsx", ".js", ".json"]
+    },
+
     module: {
-        rules: [{
-            test: /\.js|jsx$|\.css/,
-            use: ['babel-loader'],
-            exclude: /node_modules/
-        }]
+        rules: [
+            // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+            { 
+                test: /\.tsx?$/, 
+                loader: "awesome-typescript-loader",
+                options: {
+                    useCache: true,
+                    useBabel: true,
+                    babelCore: "babel-core"
+                },
+                exclude: /node_modules/
+            },{ 
+                test: /\.js?$/, 
+                exclude: /node_modules/,
+                loader: "babel-loader"
+            },
+
+            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+            { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+
+        ]
+    },
+
+    // When importing a module whose path matches one of the following, just
+    // assume a corresponding global variable exists and use that instead.
+    // This is important because it allows us to avoid bundling all of our
+    // dependencies, which allows browsers to cache those libraries between builds.
+    externals: {
+        "react": "React",
+        "react-dom": "ReactDOM"
     }
-}
+};

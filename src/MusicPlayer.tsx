@@ -1,15 +1,38 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import mdui from 'mdui'
+import * as React from 'react'
+import { updateSliders } from 'mdui'
 import RangeInput from './RangeInput'
 
 /**
   *音乐播放器组件
   **/
 
-/***必须要class组件，因为需要用到Ref***/
-class MusicPlayer extends React.Component {
-    constructor(props) {
+ declare global {
+    interface Window {
+        progress: any;
+    }
+}
+
+
+interface MusicProps {
+    audio:string;
+    title?:string;
+    subtitle?: string;
+    cover?: string;
+}
+
+interface MusicState {
+    onPlay: boolean;
+    playProgress: number;
+    audioLength: number;
+}
+
+/**
+ * 必须要class组件，因为需要用到Ref
+ * */
+
+export default class MusicPlayer extends React.Component<MusicProps, MusicState> {
+    audioDom: any;
+    constructor(props: any) {
         super(props);
         this.state = {
             onPlay:false,
@@ -25,7 +48,7 @@ class MusicPlayer extends React.Component {
             audioDom.addEventListener('loadedmetadata', () => {
                 this.setState({
                     audioLength: Math.round(audioDom.duration)//设置音频总长度             
-                },()=>mdui.updateSliders())
+                },()=> updateSliders())
             })
             audioDom.load();
             audioDom.addEventListener('play', () => {
@@ -33,7 +56,7 @@ class MusicPlayer extends React.Component {
                     this.setState({
                         playProgress: audioDom.currentTime
                     })
-                    mdui.updateSliders()//调整滑块长度
+                     updateSliders()//调整滑块长度
                 }, 100)
             })
             audioDom.addEventListener('ended', () => {
@@ -45,7 +68,12 @@ class MusicPlayer extends React.Component {
         }
     }
     render(){
-        const { audio, title, subtitle, cover, ...other } = this.props;
+        const { 
+            audio, 
+            title = "音频播放器", 
+            subtitle, 
+            cover = "https://s4.music.126.net/style/web2/img/default/default_album.jpg", 
+            ...other } = this.props;
         const { onPlay, playProgress, audioLength } = this.state
         const { audioDom } = this
         return(
@@ -55,18 +83,20 @@ class MusicPlayer extends React.Component {
                 }} className="mdui-card mdui-p-l-3">
                     <div className="mdui-row mdui-row-gapless">
                         <div className="mdui-col-xs-8 mdui-p-t-1">
-                            <div class="mdui-typo-headline">{title}</div>
-                            {subtitle?<div class="mdui-typo-subheading-opacity">{subtitle}</div>:null}
+                            <div className="mdui-typo-headline">{title}</div>
+                            {subtitle &&
+                                <div className="mdui-typo-subheading-opacity">{subtitle}</div>
+                            }
                             <RangeInput 
                                 value={String(playProgress)}
                                 title=""
                                 min="0" max={String(audioLength)}
                                 onValueChange={newValue=>{
-                                    this.setState({playProgress:newValue})
+                                    this.setState({playProgress: parseInt(newValue)})
                                     audioDom.currentTime = newValue
                                 }}
                             />  
-                            <center>
+                            <div className="center">
                                 <div className="mdui-btn-group">
                                     <button 
                                         onClick={()=>{
@@ -83,7 +113,9 @@ class MusicPlayer extends React.Component {
                                             }
                                         }}
                                         type="button" className="mdui-btn">
-                                        <i className="mdui-icon material-icons">{(onPlay)?'pause':'play_arrow'}</i>
+                                        <i className="mdui-icon material-icons">
+                                            {onPlay?'pause':'play_arrow'}
+                                        </i>
                                     </button>
                                     <a rel="noopener noreferrer" target="_blank" href={audio} download>
                                         <button
@@ -93,10 +125,10 @@ class MusicPlayer extends React.Component {
                                         </button>
                                     </a>
                                 </div>
-                            </center>
+                            </div>
                         </div>
                         <div style={{
-                            height:'160px'
+                            height:(window.innerWidth) >= 1024 ? '160px': "140px"
                         }} className="mdui-col-xs-4">
                             <img style={{
                                 width:'100%',
@@ -104,7 +136,10 @@ class MusicPlayer extends React.Component {
                             }} src={cover}></img>
                     </div>
                 </div>
-                    <audio {...other} ref={r => this.audioDom = r} style={{display:'none'}} controls="controls">
+                    <audio 
+                        {...other} ref={r => this.audioDom = r} 
+                        style={{display:'none'}} controls={true}
+                    >
                         <source src={audio} type="audio/mpeg"/>
                         Your browser does not support the audio tag.
                     </audio>
@@ -113,16 +148,3 @@ class MusicPlayer extends React.Component {
         )
     }
 }
-
-MusicPlayer.defaultProps = {
-    title:'音频播放器',
-    cover:"https://s4.music.126.net/style/web2/img/default/default_album.jpg"
-}
-
-MusicPlayer.propTypes={
-    audio:PropTypes.string.isRequired,
-    title:PropTypes.string,
-    subtitle:PropTypes.string
-}
-
-module.exports = MusicPlayer

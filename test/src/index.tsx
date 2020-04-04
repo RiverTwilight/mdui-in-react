@@ -1,17 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import {
-    ListControlMenu,
-    Input,
-    ColorInput,
-    ListControlCheck,
-    RangeInput,
-    MusicPlayer,
-    Select,
-    ToTop
-} from '../test'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
+import ListControlMenu from '../../built/ListControlMenu'
+import Input from '../../built/Input'
 
-console.log(Input)
 const menu_types = [{
     name:'通用物体和场景',
     value:'normal'
@@ -19,10 +10,20 @@ const menu_types = [{
     name:'动物',
     value:'animal'
 }]
+/*
+interface Props{
 
+}
 
-class Ui extends React.Component {
-    constructor(props) {
+interface State{
+    inputText: string;
+    menu_type: number;
+    SelectorValue: string;
+    checked: boolean
+}
+*/
+class Ui extends React.Component<any, any>{
+    constructor(props: any) {
         super(props);
         this.state = {
             inputText:'',
@@ -35,7 +36,12 @@ class Ui extends React.Component {
         const { checked, inputText, menu_type, SelectorValue } = this.state
         return(
             <React.Fragment>
-                <ToTop />
+                {/*<ToTop />
+                <ColorInput
+                    onColorChange={color=>{
+
+                    }}
+                />*/}
                 <Input
                     onValueChange={newText=>{
                         this.setState({inputText:newText})
@@ -43,18 +49,20 @@ class Ui extends React.Component {
                     value={inputText}
                     header="输入内容"
                     icon="link"
+                    error="这是一个可选的错误信息"
                     type="number"
                 /> 
                 <ListControlMenu
                     icon="language"
-                    text="识别类型"
+                    title="识别类型"
                     checked={menu_type}
                     onCheckedChange={checked=>{
                         this.setState({menu_type:checked})
                     }}
                     items={menu_types}
                 />
-                <MusicPlayer
+                {/*<MusicPlayer
+                    audio=""
                     title="My Revolution"
                     subtitle="Miracle Of Sound"
                 />
@@ -71,7 +79,7 @@ class Ui extends React.Component {
                         this.setState({SelectorValue:newOpt})
                     }}
                     value={SelectorValue}
-                />
+                />*/}
             </React.Fragment>
         )
     }
