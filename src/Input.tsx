@@ -12,7 +12,7 @@ interface InputProps {
     others?:Object;
 }
 
-const Input = ({error, helper, icon, rows, header, placeholder, value, onValueChange, ...others}:InputProps) =>{
+export const Input = ({error, helper, icon, rows, header, placeholder, value, onValueChange, ...others}:InputProps) =>{
     const TagType = rows?'textarea':'input';
     return(
         <div className={`mdui-textfield ${(placeholder)?'':'mdui-textfield-floating-label'}`}>
@@ -41,5 +41,3 @@ const Input = ({error, helper, icon, rows, header, placeholder, value, onValueCh
         </div>
     )
 }
-
-export default Input
