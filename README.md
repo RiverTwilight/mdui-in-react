@@ -23,12 +23,13 @@ This project is a derivative project of my website [ygktool](https://www.ygktool
 
 ## Usage
 ```
-<Input  
+<ComponentName  
     {...props}    
 />
 ```
+Still not clear?See the `/test/index/js`
 
-# MDUI Component
+# MDUI Components
 
 ## 输入框Input
 
@@ -108,6 +109,7 @@ other|object|--|Other parameters that can be used for audio tags, using JSX syna
 ## 颜色选择器ColorInput
 The color selector beautifies the input[type= "color"] tag as a block level button with color blocks.
 
+### options
 Name|type|default|description
 ----|----|-------|-----------
 value|string|--|color value
@@ -116,7 +118,12 @@ onColorChange|func|--|The callback function after modifying the color. The param
 other|object|--|Other parameters that can be used for input[type='color'] tags, using JSX synatx.
 
 ## 回顶按钮ToTop
+
 When the screen is more than 148px away from the top, it will automatically appear in the lower left corner. After clicking, the screen will smoothly scroll to the top.
+### options
+Nothing....
+
+
 
 ## 对话框菜单选择ListControlMenu
 

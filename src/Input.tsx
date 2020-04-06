@@ -15,7 +15,7 @@ interface InputProps {
 export const Input = ({error, helper, icon, rows, header, placeholder, value, onValueChange, ...others}:InputProps) =>{
     const TagType = rows?'textarea':'input';
     return(
-        <div className={`mdui-textfield ${(placeholder)?'':'mdui-textfield-floating-label'}`}>
+        <div className={`${error?"mdui-textfield-invalid":""}mdui-textfield ${(placeholder)?'':'mdui-textfield-floating-label'}`}>
             {icon &&
                 <i className="mdui-icon material-icons">{icon}</i>    
             }
