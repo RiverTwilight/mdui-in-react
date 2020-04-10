@@ -1,14 +1,9 @@
 import * as React from 'react'
+import { ColorProps } from '../types/mdui-in-react'
 
 /**
   *颜色选择按钮组件
   **/
-
-interface ColorProps { 
-	color: string; 
-	text?: string; 
-	onColorChange?(color: string);
-}
 
 /***必须要class组件，因为需要用到Ref***/
 export default class Color extends React.Component<ColorProps, {}>{

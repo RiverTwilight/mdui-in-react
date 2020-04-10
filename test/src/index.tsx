@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import ListControlMenu from '../../built/ListControlMenu'
-import Input from '../../built/Input'
+import ListControlMenu from '../../src/ListControlMenu'
+
 
 const menu_types = [{
     name:'通用物体和场景',
@@ -41,17 +41,18 @@ class Ui extends React.Component<any, any>{
                     onColorChange={color=>{
 
                     }}
-                />*/}
+                />
                 <Input
-                    onValueChange={newText=>{
+                    onValueChange={(newText: any)=>{
                         this.setState({inputText:newText})
                     }}
                     value={inputText}
                     header="输入内容"
                     icon="link"
                     error="这是一个可选的错误信息"
+                    capsLock={true}
                     type="number"
-                /> 
+                /> */}
                 <ListControlMenu
                     icon="language"
                     title="识别类型"

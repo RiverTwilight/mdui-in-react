@@ -1,15 +1,11 @@
 import * as React from 'react'
+import { ListControlMenu } from '../types/mdui-in-react'
 
 /**
  * 列表控制-菜单组件
  */
 
-const Dialog = ({items, onCheckedChange, title, checked}:{
-	items:Array<any>, 
-	onCheckedChange(checkedIndex: number): never, 
-	title: string, 
-	checked: number
-}) => {
+const Dialog = ({items, onCheckedChange, title, checked}:ListControlMenu) => {
 	return(
 		<div className="mdui-dialog" id="list">
 			<div className="mdui-dialog-title">{title}</div>
@@ -36,16 +32,7 @@ const Dialog = ({items, onCheckedChange, title, checked}:{
 	)
 }
 
-interface ListControlMenu{
-	//文本
-	title: string;
-	checked: number; //选中的项目名索引
-	items: {name: string; value: string}[];
-	onCheckedChange(checkedIndex: number): never;//回调函数
-	icon: string;
-}
-
-export default ({ checked, items, title = "请选择", onCheckedChange, icon = "setting" }:ListControlMenu )=> {
+export default ({ checked, items, title = "请选择", onCheckedChange, icon = "setting" }: ListControlMenu )=> {
 	return(
         <React.Fragment>
 			<li mdui-dialog="{target:'#list',history:false}" className="mdui-list-item mdui-ripple">

@@ -1,15 +1,9 @@
 import * as React from 'react'
+import { ListControlCheck } from '../types/mdui-in-react'
 
 /***
    *列表控制-开关组件
    **/
-
-interface ListControlCheck{
-    title?:string;
-    checked:boolean;
-    onCheckedChange?(isChecked: boolean): never;
-    icon?:string;
-}
 
 export default ({onCheckedChange, checked = true, title, icon = "settings"}: ListControlCheck) => (
     <li className="mdui-list-item mdui-ripple">
