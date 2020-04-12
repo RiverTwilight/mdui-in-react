@@ -1,19 +1,10 @@
 import * as React from 'react'
 import * as mdui from 'mdui'
-
+import { SelectProps, SelectState } from '../types/mdui-in-react'
 /**
   *下拉选择
   **/
 
-interface SelectProps{
-    options:{name: string, value: string}[],
-    value: string,
-    onOptionChange(value: string): void
-}
-
-interface SelectState{
-    dom: any
-}
 
 export default class Select extends React.Component<SelectProps, SelectState> {
     selectDom: any

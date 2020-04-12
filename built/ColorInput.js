@@ -14,6 +14,9 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
+/**
+  *颜色选择按钮组件
+  **/
 /***必须要class组件，因为需要用到Ref***/
 var Color = /** @class */ (function (_super) {
     __extends(Color, _super);

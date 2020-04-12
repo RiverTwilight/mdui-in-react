@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { updateSliders } from 'mdui'
+import { MusicProps, MusicState } from '../types/mdui-in-react'
 import RangeInput from './RangeInput'
 
 /**
@@ -10,20 +11,6 @@ import RangeInput from './RangeInput'
     interface Window {
         progress: any;
     }
-}
-
-
-interface MusicProps {
-    audio:string;
-    title?:string;
-    subtitle?: string;
-    cover?: string;
-}
-
-interface MusicState {
-    onPlay: boolean;
-    playProgress: number;
-    audioLength: number;
 }
 
 /**
@@ -128,7 +115,7 @@ export default class MusicPlayer extends React.Component<MusicProps, MusicState>
                             </div>
                         </div>
                         <div style={{
-                            height:(window.innerWidth) >= 1024 ? '160px': "140px"
+                            height:(window.innerWidth) >= 1024 ? '160px': "130px"
                         }} className="mdui-col-xs-4">
                             <img style={{
                                 width:'100%',

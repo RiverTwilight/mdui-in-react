@@ -52,3 +52,38 @@ export interface ListControlCheck{
      */
     icon?:string;
 }
+
+export interface MusicProps {
+    /** 音频链接 */
+    audio:string;
+    /** 卡片标题 */
+    title?:string;
+    /** 卡片副标题 */
+    subtitle?: string;
+    cover?: string;
+}
+
+export interface MusicState {
+    onPlay: boolean;
+    playProgress: number;
+    audioLength: number;
+}
+
+export interface RangeInput{
+    max?:string,
+    min?:string,
+    step?:string,
+    value:string,
+    onValueChange(newValue: string): void,
+    title:string,
+}
+
+export interface SelectProps{
+    options:{name: string, value: string}[],
+    value: string,
+    onOptionChange(value: string): void
+}
+
+export interface SelectState{
+    dom: any
+}

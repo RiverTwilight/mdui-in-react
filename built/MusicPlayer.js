@@ -117,7 +117,7 @@ var MusicPlayer = /** @class */ (function (_super) {
                                     React.createElement("button", { type: "button", className: "mdui-btn" },
                                         React.createElement("i", { className: "mdui-icon material-icons" }, "file_download")))))),
                     React.createElement("div", { style: {
-                            height: (window.innerWidth) >= 1024 ? '160px' : "140px"
+                            height: (window.innerWidth) >= 1024 ? '160px' : "130px"
                         }, className: "mdui-col-xs-4" },
                         React.createElement("img", { style: {
                                 width: '100%',

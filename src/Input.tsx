@@ -1,5 +1,5 @@
 import * as React from 'react'
-import mduiInReact from './mdui-in-react'
+import mduiInReact from '../types/mdui-in-react'
 
 export default ({ capsLock, error, helper, icon, rows, header, placeholder, value, onValueChange, ...others }: mduiInReact.InputProps) => {
     const TagType = rows ? 'textarea' : 'input';

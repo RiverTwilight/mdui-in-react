@@ -15,6 +15,9 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var mdui = require("mdui");
+/**
+  *下拉选择
+  **/
 var Select = /** @class */ (function (_super) {
     __extends(Select, _super);
     function Select(props) {
