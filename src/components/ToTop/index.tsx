@@ -6,7 +6,7 @@ declare global {
     }
 }
 
-export default () => {
+const ToTop = () => {
     const [isHide, setHide] = React.useState(true)
     React.useEffect(() => {
         window.addEventListener("scroll", () => {
@@ -17,7 +17,7 @@ export default () => {
                 setHide(false)
             }
         })
-        return () => { window.removeEventListener("scroll", () => {}) }
+        return () => { window.removeEventListener("scroll", () => { }) }
     }, [])
     return (
         <button
@@ -27,7 +27,7 @@ export default () => {
                         if (document.documentElement.scrollTop === 0) clearInterval(window.toTop)
                         document.documentElement.scrollTop -= 200
                     }, 40);
-                }else{
+                } else {
                     window.history.pushState(null, '', '#')//兼容
                 }
             }}
@@ -36,3 +36,5 @@ export default () => {
         </button>
     )
 }
+
+export default ToTop

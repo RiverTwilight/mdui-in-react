@@ -1,10 +1,16 @@
 import * as React from 'react'
-import { TabProps } from './types/development'
+
+export interface TabProps {
+    tabs: {
+        id: string,
+        component: React.Component
+    }[]
+}
 
 /**
  * Tab组件
  */
-export default ({ tabs }: TabProps): JSX.Element => (
+const Tab = ({ tabs }: TabProps): JSX.Element => (
     <>
         <div className="mdui-tab" mdui-tab="true">
             {tabs.map(tab => (
@@ -16,3 +22,5 @@ export default ({ tabs }: TabProps): JSX.Element => (
         ))}
     </>
 )
+
+export default Tab

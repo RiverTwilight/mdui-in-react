@@ -1,8 +1,9 @@
 module.exports = {
-    entry: "./lib/src/index.tsx",
+    entry: "./src/components/index.tsx",
     output: {
-        filename: "bundle.js",
-        path: __dirname + "/test/dist"
+        filename: "index.umd.js",
+        path: this.resolve('dist'),
+        libraryTarget: 'umd',
     },
 
     mode:"development",

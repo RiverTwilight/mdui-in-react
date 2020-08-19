@@ -1,6 +1,7 @@
 # mdui-in-react
 
-```
+```jsx
+
 <Input
     onValueChange={newText=>{
         this.setState({inputText:newText})
@@ -10,27 +11,31 @@
     icon="link"
     error="这是一个可选的错误信息"
     type="number"
-/> 
+/>
+
 ```
 
 `Mdui in react` is a react UI Library Based on [mdui](https://mdui.org). It encapsulates the built-in components of mdui (including callback events), and adds some practical extension components.
 
 This project is a derivative project of my website [ygktool](https://www.ygktool.cn). Thanks to mdui for its excellent front-end framework!
 
-# Quick Start
+## Quick Start
 
-## Install
+### Install
+
 `npm i mdui-in-react`
+or
+`yarn add mdui-in-react`
 
-## Usage
-```
+### Usage
+
+```jsx
 <ComponentName  
-    {...props}    
+    {...props}
 />
 ```
-Still not clear?See the `/test/index/js`
 
-# MDUI Components
+## MDUI Components
 
 ## 输入框Input
 
@@ -46,11 +51,10 @@ header|string|输入框|Label Text
 placeholder|string|null|If there is content (including space), the header will be fixed
 other|object|--|Other parameters that can be used for input tags, using JSX synatx
 
-
-
 ## 列表控制——开关ListControlCheck
 
 ### Options
+
 Name|type|default|description
 ----|----|-------|-----------
 icon|string|settings|The name of the material design icon to display in front of the litem
@@ -58,12 +62,10 @@ checked|boolean|true|if check
 onCheckedChange|func|--|Callback function when value changes, parameter is new value
 title|string|开关|just as its name implies
 
-
-
-
 ## 滑块RangeInput
 
 ### Options
+
 Name|type|default|description
 ----|----|-------|-----------
 value|string|5|just as its name implies

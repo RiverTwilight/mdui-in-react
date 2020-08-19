@@ -1,6 +1,18 @@
 import * as React from 'react'
-import { ListControlCheck } from './types/development'
 
+export interface ListControlCheck{
+    title?:string;
+    checked:boolean;
+    /**
+     * 状态更改时回调函数
+     * @param isChecked 是否选中
+     */
+    onCheckedChange?(isChecked: boolean): void;
+    /**
+     * 显示在开关前的图标
+     */
+    icon?:string;
+}
 /**
  * 列表控制-开关组件
  */

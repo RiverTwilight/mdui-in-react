@@ -1,5 +1,18 @@
 import * as React from 'react'
-import { InputProps } from './types/development'
+
+export interface InputProps {
+    value: string;
+    onValueChange?(newText: string): void;
+    icon?: string;
+    placeholder?: string;
+    rows?: number;
+    /** 帮助文本 */
+    helper?: string;
+    error?: string;
+    header?: string;
+    /** 其他Input标签属性 */
+    type?: string;
+}
 
 export default (props: InputProps) => {
     const { error, helper, icon, rows, header, placeholder, value, onValueChange, ...others } = props;
