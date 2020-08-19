@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { updateSliders } from 'mdui'
-import { MusicProps, MusicState } from '../types/mdui-in-react'
+import { MusicProps, MusicState } from './types/development'
 import RangeInput from './RangeInput'
 
 /**
@@ -27,7 +27,7 @@ export default class MusicPlayer extends React.Component<MusicProps, MusicState>
             audioLength:2000
         }
     }
-    componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps(nextProps: { audio: any; }) {
         if (nextProps.audio) {
             var {
                 audioDom
@@ -120,7 +120,7 @@ export default class MusicPlayer extends React.Component<MusicProps, MusicState>
                             <img style={{
                                 width:'100%',
                                 height:'100%'
-                            }} src={cover}></img>
+                            }} alt="cover" src={cover}></img>
                     </div>
                 </div>
                     <audio 

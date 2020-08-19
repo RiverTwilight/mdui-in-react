@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { ListControlCheck } from '../types/mdui-in-react'
+import { ListControlCheck } from './types/development'
 
-/***
-   *列表控制-开关组件
-   **/
+/**
+ * 列表控制-开关组件
+ */
 
-export default ({onCheckedChange, checked = true, title, icon = "settings"}: ListControlCheck) => (
+export default ({ onCheckedChange, checked = true, title, icon = "settings" }: ListControlCheck) => (
     <li className="mdui-list-item mdui-ripple">
         <i className="mdui-list-item-icon mdui-icon material-icons">{icon}</i>
         <div className="mdui-list-item-content">{title}</div>
@@ -15,8 +15,8 @@ export default ({onCheckedChange, checked = true, title, icon = "settings"}: Lis
                     checked: any
                 }
             }) => {
-                onCheckedChange(e.target.checked)
-            } } type="checkbox" checked={checked} />
+                onCheckedChange && onCheckedChange(e.target.checked)
+            }} type="checkbox" checked={checked} />
             <i className="mdui-switch-icon"></i>
         </label>
     </li>

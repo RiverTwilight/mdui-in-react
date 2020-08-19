@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ColorProps } from '../types/mdui-in-react'
+import { ColorProps } from './types/development'
 
 /**
   *颜色选择按钮组件
@@ -7,7 +7,6 @@ import { ColorProps } from '../types/mdui-in-react'
 
 /***必须要class组件，因为需要用到Ref***/
 export default class Color extends React.Component<ColorProps, {}>{
-	props: ColorProps
 	input: any
 	render(){
 		const { color, text, onColorChange } = this.props

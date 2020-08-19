@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "./built",//所有文件放在built目录下
+        "outDir": "lib",//所有文件放在built目录下
         "baseUrl": ".", // This must be specified if "paths" is.
         "allowJs": true,//接受JavaScript做为输入
         "target": "ES5",//JavaScript代码降级到低版本比如ECMAScript 5
