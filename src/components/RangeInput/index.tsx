@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { RangeInput } from './types/development'
 
 /**
   *进度调节Slidebar

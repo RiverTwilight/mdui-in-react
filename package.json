@@ -12,7 +12,7 @@
     "publish": "",
     "new:comp": "node scripts/new_component.js"
   },
-  "typing": ".src/typing/index.d.ts",
+  "types": "index.d.ts",
   "keywords": [
     "react",
     "mdui",
@@ -24,12 +24,12 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@babel/cli": "^7.10.5",
     "@types/node": "^13.11.0",
     "mdui": "^0.4.3",
-    "react": "^16.12.0"
+    "react": "16.13.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
     "@babel/plugin-transform-typescript": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
@@ -64,6 +64,7 @@
     "package.json",
     "lib",
     "index.js",
+    "index.d.ts",
     "README.md",
     "package-lock.json"
   ],

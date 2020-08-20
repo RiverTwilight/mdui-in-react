@@ -1,11 +1,10 @@
 import * as React from 'react'
-import { ListControlMenu } from './types/development'
 
 /**
  * 列表控制-菜单组件
  */
 
-const Dialog = ({ items, onCheckedChange, title, checked }: ListControlMenu) => (
+const Dialog = ({ items, onCheckedChange, title, checked }) => (
 	<div className="mdui-dialog" id={title}>
 		<div className="mdui-dialog-title">{title}</div>
 		<div className="mdui-dialog-content">
@@ -30,7 +29,7 @@ const Dialog = ({ items, onCheckedChange, title, checked }: ListControlMenu) => 
 	</div>
 )
 
-export default ({ checked, items, title = "请选择", onCheckedChange, icon }: ListControlMenu) => (
+export default ({ checked, items, title = "请选择", onCheckedChange, icon }) => (
 	<>
 		<li mdui-dialog={"{target:'#" + title + "',history:false}"} className="mdui-list-item mdui-ripple">
 			{icon && <i className="mdui-list-item-icon mdui-icon material-icons">{icon}</i>}

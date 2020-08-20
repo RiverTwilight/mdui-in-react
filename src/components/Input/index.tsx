@@ -1,20 +1,7 @@
+/// <reference path="../../../index.d.ts" />
 import * as React from 'react'
 
-export interface InputProps {
-    value: string;
-    onValueChange?(newText: string): void;
-    icon?: string;
-    placeholder?: string;
-    rows?: number;
-    /** 帮助文本 */
-    helper?: string;
-    error?: string;
-    header?: string;
-    /** 其他Input标签属性 */
-    type?: string;
-}
-
-export default (props: InputProps) => {
+const Input = (props) => {
     const { error, helper, icon, rows, header, placeholder, value, onValueChange, ...others } = props;
     const TagType = rows ? 'textarea' : 'input';
     const [showPwd, setShowPwd] = React.useState(false);
@@ -34,7 +21,7 @@ export default (props: InputProps) => {
                     onValueChange && onValueChange(e.target.value)
                 }}
                 value={value}
-                type={showPwd?'':props.type === 'password'?'password':props.type}
+                type={showPwd ? '' : props.type === 'password' ? 'password' : props.type}
                 className="mdui-textfield-input">
             </TagType>
             {props.type === 'password' &&
@@ -43,10 +30,10 @@ export default (props: InputProps) => {
                         right: '8px',
                         cursor: 'pointer'
                     }}
-                    onClick = {()=>{
+                    onClick={() => {
                         setShowPwd(!showPwd)
                     }}
-                    className="mdui-icon material-icons">{showPwd?'visibility_off':'visibility'}</i>
+                    className="mdui-icon material-icons">{showPwd ? 'visibility_off' : 'visibility'}</i>
             }
             {error &&
                 <div className="mdui-textfield-error">{error}</div>
@@ -57,3 +44,5 @@ export default (props: InputProps) => {
         </div>
     )
 }
+
+export default Input

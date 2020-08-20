@@ -8,6 +8,6 @@
         "allowSyntheticDefaultImports": true
     },
     "include": [
-        "./src/**/*"//读取所有可识别的src目录下的文件
+        "./src/**/*", "index.d.ts"//读取所有可识别的src目录下的文件
     ]
 }
