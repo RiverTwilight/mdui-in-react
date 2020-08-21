@@ -1,7 +1,6 @@
-/// <reference path="../../../index.d.ts" />
 import * as React from 'react'
 
-const Input = (props) => {
+const Input = (props: InputProps) => {
     const { error, helper, icon, rows, header, placeholder, value, onValueChange, ...others } = props;
     const TagType = rows ? 'textarea' : 'input';
     const [showPwd, setShowPwd] = React.useState(false);

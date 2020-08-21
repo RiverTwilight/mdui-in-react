@@ -9,7 +9,6 @@
     "test": "jest",
     "compile": "babel src/components --ignore src/components/**/__test__/*.test.js --out-dir lib --extensions .tsx",
     "dev": "",
-    "publish": "",
     "new:comp": "node scripts/new_component.js"
   },
   "types": "index.d.ts",

@@ -3,37 +3,13 @@ import { updateSliders } from 'mdui'
 import RangeInput from '../RangeInput'
 
 
-export interface MusicProps {
-    /** 音频链接 */
-    audio: string;
-    /** 卡片标题 */
-    title?: string;
-    /** 卡片副标题 */
-    subtitle?: string;
-    cover?: string;
-}
-
-export interface MusicState {
-    onPlay: boolean;
-    playProgress: number;
-    audioLength: number;
-}
-
-/**
-  *音乐播放器组件
-  **/
-
 declare global {
     interface Window {
         progress: any;
     }
 }
 
-/**
- * 必须要class组件，因为需要用到Ref
- * */
-
-export default class MusicPlayer extends React.Component<MusicProps, MusicState> {
+class MusicPlayer extends React.Component<MusicProps, MusicState> {
     audioDom: any;
     constructor(props: any) {
         super(props);
@@ -151,3 +127,5 @@ export default class MusicPlayer extends React.Component<MusicProps, MusicState>
         )
     }
 }
+
+export default MusicPlayer

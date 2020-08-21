@@ -30,6 +30,8 @@ or
 ### Usage
 
 ```jsx
+import '../node_modules/mdui/dist/css/mdui.min.css'
+
 <ComponentName  
     {...props}
 />

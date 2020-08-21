@@ -1,6 +1,6 @@
 export { default as BottomAlert } from './BottomAlert' 
 export { default as ColorPicker } from './ColorPicker' 
-export { default as FileReader } from './FileReader' 
+export { default as FileInput } from './FileInput' 
 export { default as Input } from './Input' 
 export { default as List } from './List' 
 export { default as ListControlCheck } from './ListControlCheck' 

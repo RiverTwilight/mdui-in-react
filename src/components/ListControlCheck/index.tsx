@@ -1,23 +1,6 @@
 import * as React from 'react'
 
-export interface ListControlCheck{
-    title?:string;
-    checked:boolean;
-    /**
-     * 状态更改时回调函数
-     * @param isChecked 是否选中
-     */
-    onCheckedChange?(isChecked: boolean): void;
-    /**
-     * 显示在开关前的图标
-     */
-    icon?:string;
-}
-/**
- * 列表控制-开关组件
- */
-
-export default ({ onCheckedChange, checked = true, title, icon = "settings" }: ListControlCheck) => (
+const ListControlCheck = ({ onCheckedChange, checked = true, title, icon = "settings" }: LCCProps) => (
     <li className="mdui-list-item mdui-ripple">
         <i className="mdui-list-item-icon mdui-icon material-icons">{icon}</i>
         <div className="mdui-list-item-content">{title}</div>
@@ -33,3 +16,5 @@ export default ({ onCheckedChange, checked = true, title, icon = "settings" }: L
         </label>
     </li>
 )
+
+export default ListControlCheck

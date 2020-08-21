@@ -2,29 +2,9 @@ import * as React from 'react';
 import { snackbar } from 'mdui'
 import { signListener, removeListener } from './useDragListener'
 
-export interface IProps
-	extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'webkitdirectory' | 'size' | 'prefix' | 'type'> {
-	/** 按钮宽度 */
-	maxWidth?: string,
-	maxSize?: number,
-	onFileChange?(base64: any, file: File | null, fileList: FileList | null): void,
-	fileType?: string,
-	webkitdirectory?: boolean,
-	title?: string,
-	readbydrag?: boolean
-}
-
-export interface IState {
-	btnText: string
-}
-
-
-/**
- * 读取文件组件
- */
-export default class extends React.Component<IProps, IState> {
+class FileInput extends React.Component<FRProps, FRState> {
 	realInput: any
-	constructor(props: Readonly<IProps>) {
+	constructor(props) {
 		super(props);
 		this.state = {
 			btnText: props.webkitdirectory ? '选择文件夹' : props.title ? props.title : '选择文件'
@@ -102,3 +82,5 @@ export default class extends React.Component<IProps, IState> {
 		)
 	}
 }
+
+export default FileInput

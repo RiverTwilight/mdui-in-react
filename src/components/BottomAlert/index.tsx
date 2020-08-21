@@ -1,20 +1,8 @@
+/// <reference path="../../../index.d.ts" />
 import * as React from 'react';
 import { JQ } from 'mdui'
 
-/**
- * @name 底部弹出菜单
- * 在640Px以上的屏幕会呈现为普通div元素
- */
-
-export default class extends React.Component<Readonly<{
-    /** 是否显示 */
-    ifShow: boolean;
-    /** 标题 */
-    title: string;
-    onClose(): void;
-    children: any;
-    height?: number
-}>, {}>{
+class BottomAlert extends React.Component<BAProps, {}>{
     close() {
         this.props.onClose()
         JQ.hideOverlay(true);
@@ -58,3 +46,5 @@ export default class extends React.Component<Readonly<{
         )
     }
 }
+
+export default BottomAlert
