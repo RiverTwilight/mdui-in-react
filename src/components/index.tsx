@@ -7,6 +7,7 @@ export { default as ListControlCheck } from './ListControlCheck'
 export { default as ListControlMenu } from './ListControlMenu' 
 export { default as MusicPlayer } from './MusicPlayer' 
 export { default as RangeInput } from './RangeInput' 
+export { default as Select } from './Select' 
 export { default as Tab } from './Tab' 
 export { default as ToTop } from './ToTop' 
 
