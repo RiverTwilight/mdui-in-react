@@ -10,8 +10,8 @@ class BottomAlert extends React.Component<BAProps, {}>{
     componentDidUpdate() {
         if (window.innerWidth <= 640 && this.props.ifShow) {
             document.getElementsByClassName('mdui-overlay')[0].addEventListener('click', this.close.bind(this))
-        }else{
-            JQ.hideOverlay();
+        }else if(!this.props.ifShow){
+            // JQ.hideOverlay();
         }
     }
     render() {
