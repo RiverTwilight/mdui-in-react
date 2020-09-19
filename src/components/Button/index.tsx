@@ -20,7 +20,7 @@ const Button = ({
         mdui-btn
         ${getClassName(raised)}
         ${getClassName(ripple)}
-        ${icon && getClassName("icon")}
+        ${icon && !title && getClassName("icon")}
         ${primary && getClassName("theme")}
         ${className && className}
          `}
