@@ -1,4 +1,5 @@
 export { default as BottomAlert } from './BottomAlert' 
+export { default as Button } from './Button' 
 export { default as ColorPicker } from './ColorPicker' 
 export { default as FileInput } from './FileInput' 
 export { default as Input } from './Input' 

@@ -93,6 +93,7 @@ declare interface RIProp {
 declare interface ListProps {
 	items: {
 		text: string;
+		href?: string;
 	}[];
 }
 
@@ -131,19 +132,30 @@ declare interface FRState {
 }
 
 declare interface ITab {
-	tabs: any[]
+	tabs: any[];
 }
 declare interface ISelect {
 	onOptionChange(value: any): void;
-	value: any,
-	config?: any,
+	value: any;
+	config?: any;
 	options: {
-		name: string,
-		value: any
-	}[]
+		name: string;
+		value: any;
+	}[];
 }
 
 declare interface IToTop {}
+
+declare interface IButton
+	extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, ""> {
+	title?: string;
+	raised?: boolean;
+	primary?: boolean;
+	icon?: string;
+	ripple?:boolean;
+	className?: string;
+}
+
 declare module "mdui-in-react" {
 	/**
 	 * 输入框
@@ -184,4 +196,5 @@ declare module "mdui-in-react" {
 	export function Tab(props: ITab): JSX.Element;
 	export function ToTop(props: IToTop): JSX.Element;
 	export function Select(props: ISelect): JSX.Element;
+	export function Button(props: IButton): JSX.Element;
 }
