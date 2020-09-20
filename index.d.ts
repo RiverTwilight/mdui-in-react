@@ -94,6 +94,7 @@ declare interface ListProps {
 	items: {
 		text: string;
 		href?: string;
+		[otherProp: string]: any;
 	}[];
 }
 
@@ -152,7 +153,7 @@ declare interface IButton
 	raised?: boolean;
 	primary?: boolean;
 	icon?: string;
-	ripple?:boolean;
+	ripple?: boolean;
 	className?: string;
 }
 

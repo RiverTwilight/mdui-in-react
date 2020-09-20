@@ -18,12 +18,11 @@ const Button = ({
 			{...props}
 			className={`
         mdui-btn
-        ${getClassName(raised)}
-        ${getClassName(ripple)}
-        ${icon && !title && getClassName("icon")}
-        ${primary && getClassName("theme")}
-        ${className && className}
-         `}
+        ${raised ? getClassName("raised") : ""}
+        ${ripple ? getClassName("ripple") : ""}
+        ${icon && !title ? getClassName("icon") : ""}
+        ${primary ? "mdui-color-theme" : ""}
+         `.replace(/\n\s+/g, " ")}
 		>
 			{icon && (
 				<i
