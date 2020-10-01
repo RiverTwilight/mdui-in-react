@@ -17,7 +17,8 @@ const Button = ({
 		<button
 			{...props}
 			className={`
-        mdui-btn
+		mdui-btn
+		${className}
         ${raised ? getClassName("raised") : ""}
         ${ripple ? getClassName("ripple") : ""}
         ${icon && !title ? getClassName("icon") : ""}
@@ -26,7 +27,7 @@ const Button = ({
 		>
 			{icon && (
 				<i
-					className={`mdui-text-color-theme ${
+					className={`${
 						title && "mdui-icon-left"
 					} mdui-icon material-icons`}
 				>

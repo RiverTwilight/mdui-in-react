@@ -1,11 +1,12 @@
 declare interface InputProps {
 	/** 如果是password，将显示一个显示密码按钮 */
-	type?: "number" | "text" | "file" | "date" | "password";
-	value: string;
+	type?: "number" | "text" | "file" | "date" | "password" | "email";
+	value?: string;
 	onValueChange?(newText: string): void;
 	icon?: string;
 	/** 存在则文本框变为textarea */
 	rows?: number;
+	/** 帮助文本 */
 	helper?: string;
 	error?: string;
 	placeholder?: string;
@@ -67,11 +68,12 @@ declare interface LCCProps {
 
 declare interface MusicProps {
 	/** 音频链接 */
-	audio: string;
+	audio?: string;
 	/** 卡片标题 */
 	title?: string;
 	/** 卡片副标题 */
 	subtitle?: string;
+	/** 封面图片 */
 	cover?: string;
 }
 
@@ -123,6 +125,9 @@ declare interface FRProps
 	): void;
 	fileType?: string;
 	webkitdirectory?: boolean;
+	/** 按钮标题
+	 * @default 'Auto detect'
+	 */
 	title?: string;
 	/** 是否监听拖拽文件事件 */
 	readbydrag?: boolean;

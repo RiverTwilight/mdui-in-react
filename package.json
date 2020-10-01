@@ -1,6 +1,6 @@
 {
   "name": "mdui-in-react",
-  "version": "1.2.13",
+  "version": "1.2.14",
   "description": "A react UI Library Based on mdui. It encapsulates the built-in components of mdui (including callback events), and adds some practical extension components.",
   "main": "lib/index.js",
   "unpkg": "dist/index.umd.js",
