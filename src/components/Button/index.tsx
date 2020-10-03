@@ -11,14 +11,17 @@ const Button = ({
 	className,
 	ripple,
 	title,
+	component,
+	iconColor,
 	...props
 }) => {
+	const Component = component || "button";
 	return (
-		<button
+		<Component
 			{...props}
 			className={`
 		mdui-btn
-		${className}
+		${className ? className : ""}
         ${raised ? getClassName("raised") : ""}
         ${ripple ? getClassName("ripple") : ""}
         ${icon && !title ? getClassName("icon") : ""}
@@ -27,15 +30,17 @@ const Button = ({
 		>
 			{icon && (
 				<i
-					className={`${
-						title && "mdui-icon-left"
+					className={`${title && "mdui-icon-left"} ${
+						iconColor
+							? `mdui-text-color-${iconColor}`
+							: "mdui-text-color-theme"
 					} mdui-icon material-icons`}
 				>
 					{icon}
 				</i>
 			)}
 			{title}
-		</button>
+		</Component>
 	);
 };
 
