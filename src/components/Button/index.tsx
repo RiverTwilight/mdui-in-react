@@ -33,6 +33,8 @@ const Button = ({
 					className={`${title && "mdui-icon-left"} ${
 						iconColor
 							? `mdui-text-color-${iconColor}`
+							: primary
+							? ""
 							: "mdui-text-color-theme"
 					} mdui-icon material-icons`}
 				>

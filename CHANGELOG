@@ -1,0 +1,9 @@
+## 2020 年 10 月 3 日
+
+```diff
+<FileInput
+-    onFileChange={...}
++    onFileUpload={...}
+/>
+
+```
