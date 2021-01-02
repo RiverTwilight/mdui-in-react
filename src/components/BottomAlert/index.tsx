@@ -14,6 +14,9 @@ class BottomAlert extends React.Component<BAProps, {}> {
 				.addEventListener("click", this.close.bind(this));
 		}
 	}
+	componentWillUnmount() {
+		document.removeEventListener("click", this.close.bind(this));
+	}
 	shouldComponentUpdate(nextProps) {
 		return nextProps.ifShow !== this.props.ifShow;
 	}
