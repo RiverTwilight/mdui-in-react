@@ -7,12 +7,15 @@ class BottomAlert extends React.Component<BAProps, {}> {
 		this.props.onClose();
 		JQ.hideOverlay(true);
 	}
-	componentDidMount() {
+	registerCloseByOutside() {
 		if (window.innerWidth <= 640) {
 			document
 				.getElementsByClassName("mdui-overlay")[0]
 				.addEventListener("click", this.close.bind(this));
 		}
+	}
+	componentDidMount() {
+		this.registerCloseByOutside();
 	}
 	componentWillUnmount() {
 		document.removeEventListener("click", this.close.bind(this));
@@ -24,6 +27,7 @@ class BottomAlert extends React.Component<BAProps, {}> {
 		if (!this.props.ifShow) {
 			this.close();
 		}
+		this.registerCloseByOutside();
 	}
 	render() {
 		const { ifShow, title, children, height } = this.props;
