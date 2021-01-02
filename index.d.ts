@@ -36,7 +36,7 @@ declare interface BAProps {
 	/** 标题 */
 	title: string;
 	onClose(): void;
-	children: any;
+	children?: any;
 	height?: number;
 }
 
